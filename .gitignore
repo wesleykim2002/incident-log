@@ -1,0 +1,5 @@
+node_modules
+
+.env
+
+src/config/incident-logger-6025d-firebase-adminsdk-fbsvc-d98d6dfa68.json
