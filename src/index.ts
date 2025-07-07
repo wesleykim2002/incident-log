@@ -3,6 +3,7 @@ import { sequelize } from './config/db';
 import dotenv from 'dotenv';
 import { authenticate } from './middleware/auth';
 import incidentsRoute from './routes/incidents';
+import cors from 'cors';
 
 const app = express();
 dotenv.config();
@@ -13,6 +14,13 @@ const port = process.env.PORT || 3000;
 app.get('/', (req: Request, res: Response) => {
     res.send('API is running!')
 })
+
+app.use(
+  cors({
+    origin: 'http://localhost:3001',
+    credentials: true,
+  })
+);
 
 app.get('/private', authenticate, (req, res) => {
   const user = (req as any).user;

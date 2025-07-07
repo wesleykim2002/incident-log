@@ -11,8 +11,28 @@ Send POST request to: `https://identitytoolkit.googleapis.com/v1/accounts:signIn
 With:
 '''
 {
-  "email": "wesleykim2002@gmail.com",
+  "email": "dummyemail@abc.com",
   "password": "Password123",
   "returnSecureToken": true
 }
 '''
+
+## Create incident:
+
+Send POST request to: `http://localhost:3000/incidents/`
+
+Requires Bearer Token
+
+With:
+'''
+{
+  "type": "fall",
+  "description": "Resident fell near the dining hall at 7 PM."
+}
+'''
+
+## Summarize with OpenAI:
+
+Send POST request to `http://localhost:3000/incidents/:id/summarize`
+
+Requires Bearer Token

@@ -18,15 +18,18 @@
   },
   "homepage": "https://github.com/wesleykim2002/incident-logger#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^17.0.1",
     "express": "^5.1.0",
     "firebase-admin": "^13.4.0",
+    "google-auth-library": "^10.1.0",
     "openai": "^4.104.0",
     "pg": "^8.16.3",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.37.7"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
     "@types/jest": "^30.0.0",
     "@types/node": "^24.0.10",

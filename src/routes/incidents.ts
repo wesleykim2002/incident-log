@@ -5,6 +5,26 @@ import { openai } from '../config/openai';
 
 const router = express.Router();
 
+router.get(
+  "/",
+  authenticate,
+  async (req: Request, res: Response): Promise<void> => {
+    const user = (req as any).user;
+
+    try {
+      const incidents = await Incident.findAll({
+        where: { userId: user.uid },
+        order: [["createdAt", "DESC"]],
+      });
+
+      res.json(incidents);
+    } catch (err) {
+      console.error("Error fetching incidents:", err);
+      res.status(500).json({ error: "Failed to fetch incidents" });
+    }
+  }
+);
+
 router.post(
   '/',
   authenticate,
@@ -31,7 +51,6 @@ router.post(
     }
   }
 );
-
 
 router.post(
   '/:id/summarize',
