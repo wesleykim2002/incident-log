@@ -87,18 +87,22 @@ export default function Home() {
       </header>
 
       <section className="space-y-2">
-        <input
-          value={type}
-          onChange={(e) => setType(e.target.value)}
-          placeholder="Type (e.g. fall)"
-          className="border p-2 w-full"
-        />
-        <textarea
-          value={description}
-          onChange={(e) => setDesc(e.target.value)}
-          placeholder="Description"
-          className="border p-2 w-full min-h-[100px]"
-        />
+        <div>
+          <input
+            value={type}
+            onChange={(e) => setType(e.target.value)}
+            placeholder="Type (e.g. fall)"
+            className="border p-2 w-full"
+          />
+        </div>
+        <div>
+          <textarea
+            value={description}
+            onChange={(e) => setDesc(e.target.value)}
+            placeholder="Description"
+            className="border p-2 w-full min-h-[100px]"
+          />
+        </div>
         <button
           onClick={submit}
           disabled={loading}
