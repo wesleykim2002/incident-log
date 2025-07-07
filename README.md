@@ -3,6 +3,10 @@
 ## How to get started
 * download `.env` file and move to `incident-log` folder
 * download incident-logger firebase auth JSON file and move to `src/config`
+* download `.env.local` file and move to `frontend` folder
+
+* run `npx ts-node-dev src/index.ts` to get backend running
+  * to ensure that frontend isn't running on the same port as the backend, please run the frontend with `npm run dev -- -p 3001` from the frontend directory
 
 ## To get auth token:
 
